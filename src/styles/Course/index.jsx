@@ -18,7 +18,7 @@ export const commonStyles = {
       width: 100,
       height: 4,
       mx: 'auto',
-      background: 'linear-gradient(to bottom right, #CBD5E1,rgb(208, 213, 219))',
+      background: `linear-gradient(to bottom right, ${colors.Underline},${colors.SoftSlate})`,
       borderRadius: 2,
       mb: 6,
     },

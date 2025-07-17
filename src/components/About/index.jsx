@@ -17,7 +17,7 @@ import {
   scaleFadeIn,
   iconHoverEffect,
 } from "../../styles/About/index";
-import { common, fontFamily } from "../../styles/theme/index";
+import { common, fontFamily, colors } from "../../styles/theme/index";
 
 const skills = [
   "React.js",
@@ -43,7 +43,6 @@ const About = () => {
         mx: "auto",
       }}
     >
-      {/* Section Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +60,6 @@ const About = () => {
       </motion.div>
 
       <Grid container spacing={4}>
-        {/* Avatar */}
         <Grid size={{ xs: 12, md: 4 }}>
           <motion.div
             variants={scaleFadeIn}
@@ -74,8 +72,7 @@ const About = () => {
                 width: isMobile ? 192 : 350,
                 height: isMobile ? 192 : 430,
                 mx: "auto",
-                background:
-                  "linear-gradient(to bottom right, #1e40af, #93c5fd)",
+                background: `linear-gradient(to bottom right, ${colors.RoyalBlue},${colors.BabyBlue})`,
                 borderRadius: "50%",
                 p: "4px",
               }}
@@ -95,7 +92,6 @@ const About = () => {
           </motion.div>
         </Grid>
 
-        {/* Content */}
         <Grid size={{ xs: 12, md: 8 }}>
           <Box textAlign={{ xs: "center", md: "left" }} sx={{ p: 2 }}>
             <motion.div
@@ -136,7 +132,6 @@ const About = () => {
                 excited to contribute to teams that value both.
               </Typography>
 
-              {/* Horizontal Line */}
               <motion.div
                 initial={{ width: 0, opacity: 0 }}
                 whileInView={{ width: "100%", opacity: 1 }}
@@ -154,7 +149,6 @@ const About = () => {
                 />
               </motion.div>
 
-              {/* Skills */}
               <Stack
                 direction="row"
                 flexWrap="wrap"

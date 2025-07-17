@@ -18,23 +18,25 @@ import {
   Stack,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import SchoolIcon from "@mui/icons-material/School";
-import WorkIcon from "@mui/icons-material/Work";
-import FolderIcon from "@mui/icons-material/Folder";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import CastForEducationOutlinedIcon from "@mui/icons-material/CastForEducationOutlined";
+import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { motion } from "framer-motion";
-
+import { colors } from "../../styles/theme/index";
+import Logo from "../Logo";
+  
 const menuItems = [
-  { label: "Home", icon: <HomeIcon /> },
-  { label: "About", icon: <InfoIcon /> },
-  { label: "Education", icon: <SchoolIcon /> },
-  { label: "Course", icon: <FolderIcon /> },
-  { label: "Experience", icon: <WorkIcon /> },
-  { label: "Contact Us", icon: <ContactMailIcon /> },
+  { label: "Home", icon: <HomeOutlinedIcon /> },
+  { label: "About", icon: <InfoOutlinedIcon /> },
+  { label: "Education", icon: <SchoolOutlinedIcon /> },
+  { label: "Course", icon: <CastForEducationOutlinedIcon /> },
+  { label: "Experience", icon: <WorkOutlineOutlinedIcon /> },
+  { label: "Contact Us", icon: <ContactMailOutlinedIcon /> },
 ];
 
 const Navbar = ({ mode, toggleColorMode }) => {
@@ -68,7 +70,7 @@ const Navbar = ({ mode, toggleColorMode }) => {
     <Box
       sx={{
         width: 250,
-        backgroundColor: mode === "dark" ? "#000" : "#fff",
+        backgroundColor: mode === "dark" ? colors.Black : colors.White,
         height: "100%",
       }}
       role="presentation"
@@ -86,14 +88,17 @@ const Navbar = ({ mode, toggleColorMode }) => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon
-                  sx={{ color: mode === "dark" ? "#ffffff" : "#1E293B" }}
+                  sx={{
+                    color: mode === "dark" ? colors.White : colors.textPrimary,
+                    fontSize: "20px",
+                  }}
                 >
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText
                   primary={item.label}
                   sx={{
-                    color: mode === "dark" ? "#ffffff" : "#1E293B",
+                    color: mode === "dark" ? colors.White : colors.textPrimary,
                     fontFamily: `'Poppins', 'Inter', sans-serif`,
                   }}
                 />
@@ -110,7 +115,7 @@ const Navbar = ({ mode, toggleColorMode }) => {
           variant="body2"
           sx={{
             ml: 1,
-            color: mode === "dark" ? "#ffffff" : "#1E293B",
+            color: mode === "dark" ? colors.White : colors.textPrimary,
             fontFamily: `'Poppins', 'Inter', sans-serif`,
           }}
         >
@@ -134,8 +139,8 @@ const Navbar = ({ mode, toggleColorMode }) => {
           transition: "transform 0.3s ease-in-out",
           transform: hideOnScroll ? "translateY(-100%)" : "translateY(0)",
           backdropFilter: "blur(8px)",
-          backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
-          color: mode === "dark" ? "#ffffff" : "#1E293B",
+          backgroundColor: mode === "dark" ? colors.Black : colors.White,
+          color: mode === "dark" ? colors.White : colors.textPrimary,
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -144,16 +149,18 @@ const Navbar = ({ mode, toggleColorMode }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Typography
+            {/* <Typography
               variant="h6"
               sx={{
                 fontWeight: "bold",
                 fontFamily: `'Poppins', 'Inter', sans-serif`,
-                color: mode === "dark" ? "#ffffff" : "#1E293B",
+                color: mode === "dark" ? colors.White : colors.textPrimary,
               }}
             >
               Vasanthakumar
-            </Typography>
+            </Typography> */}
+            <Logo />
+
           </motion.div>
 
           {!isMobile ? (
@@ -168,7 +175,8 @@ const Navbar = ({ mode, toggleColorMode }) => {
                   <Button
                     startIcon={item.icon}
                     sx={{
-                      color: mode === "dark" ? "#ffffff" : "#1E293B",
+                      color:
+                        mode === "dark" ? colors.White : colors.textPrimary,
                       textTransform: "none",
                       fontWeight: 500,
                       fontFamily: `'Poppins', 'Inter', sans-serif`,
@@ -198,7 +206,9 @@ const Navbar = ({ mode, toggleColorMode }) => {
               onClick={toggleDrawer(true)}
             >
               <MenuIcon
-                sx={{ color: mode === "dark" ? "#ffffff" : "#1E293B" }}
+                sx={{
+                  color: mode === "dark" ? colors.White : colors.textPrimary,
+                }}
               />
             </IconButton>
           )}

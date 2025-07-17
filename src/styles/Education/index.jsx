@@ -1,8 +1,10 @@
+import { colors } from "../theme/index";
+
 export const commonStyles = {
     card: {
       padding: 3,
       borderRadius: 3,
-      backgroundColor: '#f9fafb',
+      backgroundColor: colors.OffWhite,
       transition: '0.3s',
       '&:hover': {
         transform: 'translateY(-4px)',
@@ -34,7 +36,7 @@ export const commonStyles = {
       left: '32px',
       top: 0,
       width: '4px',
-      background: 'linear-gradient(to bottom, #1e40af, #93c5fd)',
+      background: `linear-gradient(to bottom, ${colors.RoyalBlue}, ${colors.BabyBlue})`,
       borderRadius: '2px',
       zIndex: 0,
     },

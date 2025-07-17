@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Typography, Grid, Divider, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
-import { commonStyles } from "../../styles/Course/index"; // Adjust path as needed
-import { common, fontFamily } from "../../styles/theme/index"; // Adjust path as needed
+import { commonStyles } from "../../styles/Course/index";
+import { common, fontFamily } from "../../styles/theme/index";
 
 const Course = () => {
   const theme = useTheme();
@@ -20,7 +20,6 @@ const Course = () => {
 
   return (
     <Box sx={commonStyles.sectionContainer}>
-      {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,21 +31,22 @@ const Course = () => {
           color="primary"
           textAlign="center"
           gutterBottom
-          sx={{...common.sectionTitle, color: "inherit", fontFamily: fontFamily.fontFamily}}
+          sx={{
+            ...common.sectionTitle,
+            color: "inherit",
+            fontFamily: fontFamily.fontFamily,
+          }}
         >
           Completed Courses
         </Typography>
         <Divider sx={common.sectionDivider} />
       </motion.div>
 
-      {/* Certificates Grid */}
       <Grid container spacing={4}>
         {[1, 2].map((index) => (
           <Grid
             key={index}
-            item
-            xs={12}
-            sm={6}
+            size={{ xs: 12, sm: 6 }}
             display="flex"
             justifyContent="center"
           >

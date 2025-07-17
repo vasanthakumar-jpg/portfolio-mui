@@ -12,7 +12,12 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { contactStyles } from "../../styles/Contact/index";
-import { common, inputStyles, fontFamily } from "../../styles/theme/index";
+import {
+  common,
+  inputStyles,
+  fontFamily,
+  colors,
+} from "../../styles/theme/index";
 import { useTheme } from "@mui/material/styles";
 
 const Contact = () => {
@@ -50,7 +55,6 @@ const Contact = () => {
 
   return (
     <Box sx={contactStyles.sectionContainer}>
-      {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +63,11 @@ const Contact = () => {
       >
         <Typography
           variant="h4"
-          sx={{...common.sectionTitle, color: "inherit", fontFamily: fontFamily.fontFamily}}
+          sx={{
+            ...common.sectionTitle,
+            color: "inherit",
+            fontFamily: fontFamily.fontFamily,
+          }}
           gutterBottom
           textAlign="center"
         >
@@ -68,7 +76,6 @@ const Contact = () => {
         <Divider sx={common.sectionDivider} />
       </motion.div>
 
-      {/* Form */}
       <Box
         component="form"
         onSubmit={handleSubmit(onSubmit)}
@@ -114,13 +121,16 @@ const Contact = () => {
           sx={{
             mt: 4,
             backgroundColor:
-              theme.palette.mode === "dark" ? "#2563EB" : "#3B82F6", // Tailwind-inspired blue
-            color: "#ffffff",
+              theme.palette.mode === "dark"
+                ? colors.boldblue
+                : colors.Secondary,
             textTransform: "none",
             fontWeight: 500,
             "&:hover": {
               backgroundColor:
-                theme.palette.mode === "dark" ? "#1D4ED8" : "#2563EB",
+                theme.palette.mode === "dark"
+                  ? colors.saturatedblue
+                  : colors.boldblue,
             },
           }}
         >
@@ -138,7 +148,6 @@ const Contact = () => {
         )}
       </Box>
 
-      {/* Google Map */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

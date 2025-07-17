@@ -1,5 +1,10 @@
 import React, { useState, useMemo } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+} from "react-router-dom";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import LandingPage from "./pages/Landingpage";
 import { colors } from "./styles/theme/index";
@@ -17,15 +22,15 @@ function App() {
         palette: {
           mode,
           primary: {
-            main: mode === "dark" ? "#90caf9" : "#1976d2",
+            main: mode === "dark" ? colors.lightshade : colors.mediumshade,
           },
           background: {
-            default: mode === "dark" ? "#000000" : "#f5f5f5",
-            paper: mode === "dark" ? "#121212" : colors.white,
+            default: mode === "dark" ? colors.Black : colors.verylightgray,
+            paper: mode === "dark" ? colors.verydarkgray : colors.White,
           },
           text: {
-            primary: mode === "dark" ? colors.white : "#1E293B",
-            secondary: mode === "dark" ? "#cccccc" : "#4B5563",
+            primary: mode === "dark" ? colors.White : colors.textPrimary,
+            secondary: mode === "dark" ? colors.mediumgray : colors.grayishblue,
           },
         },
         typography: {
@@ -34,20 +39,28 @@ function App() {
       }),
     [mode]
   );
-  
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route
+        path="/portfolio-mui/"
+        element={
+          <LandingPage mode={mode} toggleColorMode={toggleColorMode} />
+        }
+      />
+    ),
+    {
+      future: {
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      },
+    }
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Routes>
-          <Route
-            path="/portfolio-mui/"
-            element={
-              <LandingPage mode={mode} toggleColorMode={toggleColorMode} />
-            }
-          />
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }

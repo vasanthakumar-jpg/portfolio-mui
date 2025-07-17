@@ -191,7 +191,6 @@ export default function Education() {
         {educationDetails.map((edu, index) => (
           <Grid
             key={index}
-            item
             container
             spacing={2}
             wrap="nowrap"
@@ -234,7 +233,7 @@ export default function Education() {
               </Box>
             )}
 
-            <Grid item xs zeroMinWidth>
+            <Grid size={{xs:12}}>
               <Card edu={edu} index={index} />
             </Grid>
           </Grid>

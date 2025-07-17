@@ -6,9 +6,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { motion } from "framer-motion";
-import { iconHoverEffect, fontFamily, colors } from "../../styles/theme/index";
+import { iconHoverEffect, colors } from "../../styles/theme/index";
 import { useTheme } from "@mui/material/styles";
-
+import { common } from "../../styles/theme/index";
 const Footer = ({ mode }) => {
   const theme = useTheme();
 
@@ -19,7 +19,8 @@ const Footer = ({ mode }) => {
         mt: 8,
         py: 4,
         px: 2,
-        backgroundColor: theme.palette.mode === "dark" ? "#121212" : "#fff",
+        backgroundColor:
+          theme.palette.mode === "dark" ? colors.verydarkgray : colors.White,
         color: theme.palette.text.primary,
         borderTop: `1px solid ${theme.palette.divider}`,
       }}
@@ -39,23 +40,23 @@ const Footer = ({ mode }) => {
           {[
             {
               icon: <InstagramIcon />,
-              link: "https://instagram.com",
-              color: "#E4405F",
+              link: "https://www.instagram.com/vasanth_vasu_vv/",
+              color: colors.vividpinkishred,
             },
             {
               icon: <TwitterIcon />,
               link: "https://twitter.com",
-              color: "#1DA1F2",
+              color: colors.vividblue,
             },
             {
               icon: <LinkedInIcon />,
-              link: "https://linkedin.com",
-              color: "#0A66C2",
+              link: "https://www.linkedin.com/in/vasanthakumar-rajendran-83993422b/",
+              color: colors.professionalblue,
             },
             {
               icon: <GitHubIcon />,
-              link: "https://github.com",
-              color: colors.primary,
+              link: "https://github.com/vasanthakumar-jpg",
+              color: mode === "dark" ? colors.White : colors.primary,
             },
           ].map((item, i) => (
             <motion.div key={i} {...iconHoverEffect}>
@@ -77,13 +78,13 @@ const Footer = ({ mode }) => {
           ))}
         </Stack>
 
-        <Divider sx={{ mb: 2,bgcolor:theme.palette.text.primary }} />
+        <Divider sx={{ mb: 2, bgcolor: theme.palette.text.primary }} />
 
         <Typography
           variant="body2"
           align="center"
           color="text.secondary"
-          sx={{ fontFamily: fontFamily.fontFamily }}
+          sx={{ fontFamily: common.fontFamily }}
         >
           © {new Date().getFullYear()} Vasanthakumar. All rights reserved.
         </Typography>
