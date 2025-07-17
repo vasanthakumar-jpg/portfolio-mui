@@ -58,7 +58,7 @@ const Course = () => {
             >
               <Box
                 component="img"
-                src={`/images/cert${index}.jpg`}
+                src={`${import.meta.env.BASE_URL}images/cert${index}.jpg`}
                 alt={`Certificate ${index}`}
                 sx={commonStyles.certificateImage(isMobile)}
               />

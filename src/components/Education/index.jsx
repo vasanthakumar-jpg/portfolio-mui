@@ -16,7 +16,7 @@ import { common , fontFamily} from "../../styles/theme/index";
 
 const educationDetails = [
   {
-    image: "/images/clg.jpg",
+    image: `${import.meta.env.BASE_URL}images/clg.jpg`,
     institution: "Nandha Engineering College",
     degree: "B.Tech – Computer Science and Engineering",
     year: "2017 - 2021",
@@ -24,7 +24,7 @@ const educationDetails = [
       "Nandha Engineering College (NEC) is private, established in 2001 Erode, Tamil Nadu.",
   },
   {
-    image: "/images/scl2.avif",
+    image: `${import.meta.env.BASE_URL}images/scl2.avif`,
     institution: "Vidhya Vikas Matric Hr. Sec. School, Tirupur",
     degree: "HSC – Computer Science",
     year: "2017",
@@ -32,7 +32,7 @@ const educationDetails = [
       "The school is known for its academic excellence and commitment to holistic education.",
   },
   {
-    image: "/images/scl1.jpg",
+    image: `${import.meta.env.BASE_URL}images/scl1.jpg`,
     institution: "Vidhya Vikas Matric Hr. Sec. School, Tirupur",
     degree: "SSLC",
     year: "2015",

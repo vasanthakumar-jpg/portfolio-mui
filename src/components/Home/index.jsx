@@ -200,7 +200,7 @@ const Home = () => {
           >
             <Box
               component="img"
-              src="/images/e3.png"
+              src={`${import.meta.env.BASE_URL}images/e3.png`}
               alt="Profile"
               sx={layout.image}
             />

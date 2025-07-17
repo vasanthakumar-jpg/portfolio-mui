@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import Home from "../../components/Home";
-import About from "../../components/About";
+const About = React.lazy(() => import('../../components/About'));
 import Education from "../../components/Education";
 import Experience from "../../components/Experience";
 import Course from "../../components/Course";

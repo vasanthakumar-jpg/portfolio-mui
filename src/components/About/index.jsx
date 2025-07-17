@@ -81,7 +81,7 @@ const About = () => {
               }}
             >
               <Avatar
-                src="/images/3.webp"
+                src={`${import.meta.env.BASE_URL}images/3.webp`}
                 alt="Avatar"
                 sx={{
                   width: "100%",
