@@ -23,7 +23,6 @@ const Logo = () => {
             letterSpacing: "1.2px",
             fontSize: "12px",
             textTransform: "uppercase",
-            color: "black",
           }}
         >
           Frontend Developer
