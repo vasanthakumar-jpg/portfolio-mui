@@ -44,12 +44,11 @@ function App() {
     createRoutesFromElements(
       <Route
         path="/portfolio-mui/"
-        element={
-          <LandingPage mode={mode} toggleColorMode={toggleColorMode} />
-        }
+        element={<LandingPage mode={mode} toggleColorMode={toggleColorMode} />}
       />
     ),
     {
+      // 👇 Enables v7 future flags
       future: {
         v7_startTransition: true,
         v7_relativeSplatPath: true,

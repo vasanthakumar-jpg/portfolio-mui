@@ -55,7 +55,7 @@ const Experience = () => {
   };
 
   return (
-    <Box sx={experienceStyles.sectionContainer}>
+    <Box id="experience" sx={experienceStyles.sectionContainer}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

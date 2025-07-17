@@ -15,7 +15,6 @@ import {
   typographySizes,
   fadeInUp,
   scaleFadeIn,
-  iconHoverEffect,
 } from "../../styles/About/index";
 import { common, fontFamily, colors } from "../../styles/theme/index";
 
@@ -35,6 +34,7 @@ const About = () => {
 
   return (
     <Box
+      id="about"
       sx={{
         flexGrow: 1,
         pb: { xs: 2, md: 10 },

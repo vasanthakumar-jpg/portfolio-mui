@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Button,
-  Container,
   TextField,
   Typography,
   Alert,
@@ -54,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <Box sx={contactStyles.sectionContainer}>
+    <Box id="contact" sx={contactStyles.sectionContainer}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

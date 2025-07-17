@@ -19,7 +19,7 @@ const Course = () => {
   };
 
   return (
-    <Box sx={commonStyles.sectionContainer}>
+    <Box id="course" sx={commonStyles.sectionContainer}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

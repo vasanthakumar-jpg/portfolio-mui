@@ -33,13 +33,12 @@ const Home = () => {
   const isInViewLeft = useInView(refLeft, { once: true });
   const isInViewRight = useInView(refRight, { once: true });
 
-  const bgColor =
-    mode === "dark" ? colors.DarkBackground : colors.OffWhite;
-  const waveColor =
-    mode === "dark" ? colors.saturatedblue : colors.Secondary;
+  const bgColor = mode === "dark" ? colors.DarkBackground : colors.OffWhite;
+  const waveColor = mode === "dark" ? colors.saturatedblue : colors.Secondary;
 
   return (
     <Box
+      id="home"
       sx={{
         ...layout.container,
         position: "relative",
@@ -48,48 +47,25 @@ const Home = () => {
         pt: { xs: 10, sm: 12 },
         pb: 10,
       }}
-    >  
-{/* <Box
-  sx={{
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    zIndex: -1,
-    overflow: "hidden",
-    lineHeight: 0,
-  }}
->
-  <svg
-    viewBox="0 0 1440 320"
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="none"
-    style={{ width: "100%", height: "100%" }}
-  >
-    <path
-      fill={waveColor}
-      fillOpacity="1"
-      d="M0,160 C360,320 1080,0 1440,160 L1440,0 L0,0 Z"
-    />
-  </svg>
-</Box> */}
-
-<Box sx={{ position: "absolute", top: 0, width: "100%", zIndex: -1 }}>
-  <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style={{ width: "100%" }}>
-    <defs>
-      <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor={waveColor} />
-        <stop offset="100%" stopColor={bgColor} stopOpacity="0" />
-      </linearGradient>
-    </defs>
-    <path
-      fill="url(#fade)"
-      d="M0,160 C360,320 1080,0 1440,160 L1440,0 L0,0 Z"
-    />
-  </svg>
-</Box>
-
-
+    >
+      <Box sx={{ position: "absolute", top: 0, width: "100%", zIndex: -1 }}>
+        <svg
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          style={{ width: "100%" }}
+        >
+          <defs>
+            <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor={waveColor} />
+              <stop offset="100%" stopColor={bgColor} stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#fade)"
+            d="M0,160 C360,320 1080,0 1440,160 L1440,0 L0,0 Z"
+          />
+        </svg>
+      </Box>
 
       <Grid
         container
@@ -97,7 +73,6 @@ const Home = () => {
         justifyContent="center"
         direction={{ xs: "column-reverse", md: "row" }}
       >
-        {/* Left Text Section */}
         <Grid item xs={12} md={6}>
           <motion.div
             ref={refLeft}
@@ -186,8 +161,7 @@ const Home = () => {
                   },
                   {
                     icon: <LinkedInIcon />,
-                    link:
-                      "https://www.linkedin.com/in/vasanthakumar-rajendran-83993422b/",
+                    link: "https://www.linkedin.com/in/vasanthakumar-rajendran-83993422b/",
                     color: colors.professionalblue,
                   },
                   {
@@ -248,7 +222,6 @@ const Home = () => {
           </motion.div>
         </Grid>
 
-        {/* Right Image Section */}
         <Grid item xs={12} md={6}>
           <motion.div
             ref={refRight}

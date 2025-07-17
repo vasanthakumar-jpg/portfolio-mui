@@ -8,11 +8,10 @@ import {
   Paper,
   Divider,
   IconButton,
-  Collapse,
 } from "@mui/material";
 import { motion, useAnimation, useInView } from "framer-motion";
 import SchoolIcon from "@mui/icons-material/School";
-import { common , fontFamily} from "../../styles/theme/index";
+import { common, fontFamily } from "../../styles/theme/index";
 
 const educationDetails = [
   {
@@ -107,7 +106,11 @@ const Card = ({ edu, index }) => {
 
           <Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Typography variant="h6" color={theme.palette.text.primary} sx={{fontFamily: fontFamily.fontFamily}}>
+              <Typography
+                variant="h6"
+                color={theme.palette.text.primary}
+                sx={{ fontFamily: fontFamily.fontFamily }}
+              >
                 {edu.institution}
               </Typography>
               <motion.div
@@ -120,13 +123,25 @@ const Card = ({ edu, index }) => {
               </motion.div>
             </Box>
 
-            <Typography variant="subtitle1" color={theme.palette.text.primary} sx={{fontFamily: fontFamily.fontFamily}}>
+            <Typography
+              variant="subtitle1"
+              color={theme.palette.text.primary}
+              sx={{ fontFamily: fontFamily.fontFamily }}
+            >
               {edu.degree}
             </Typography>
-            <Typography variant="subtitle2" color={theme.palette.text.Accent} sx={{fontFamily: fontFamily.fontFamily}}>
+            <Typography
+              variant="subtitle2"
+              color={theme.palette.text.Accent}
+              sx={{ fontFamily: fontFamily.fontFamily }}
+            >
               {edu.year}
             </Typography>
-            <Typography variant="body2" color={theme.palette.text.primary} sx={{fontFamily: fontFamily.fontFamily}}>
+            <Typography
+              variant="body2"
+              color={theme.palette.text.primary}
+              sx={{ fontFamily: fontFamily.fontFamily }}
+            >
               {edu.description}
             </Typography>
           </Box>
@@ -142,6 +157,7 @@ export default function Education() {
 
   return (
     <Box
+      id="education"
       sx={{
         px: 2,
         maxWidth: "1200px",
@@ -161,25 +177,27 @@ export default function Education() {
           color="primary"
           textAlign="center"
           gutterBottom
-          sx={{...common.sectionTitle, color: "inherit", fontFamily: fontFamily.fontFamily }}
+          sx={{
+            ...common.sectionTitle,
+            color: "inherit",
+            fontFamily: fontFamily.fontFamily,
+          }}
         >
           Education
         </Typography>
-        <Divider
-          sx={common.sectionDivider}
-        />
+        <Divider sx={common.sectionDivider} />
       </motion.div>
 
       <Grid container direction="column" spacing={6}>
         {!isMobile && (
           <motion.div
             initial={{ height: 0 }}
-            whileInView={{ height: 700 }} // Adjust this based on number of items
+            whileInView={{ height: 700 }}
             transition={{ duration: 1 }}
             style={{
               position: "absolute",
               left: "32px",
-              top: 120, // reduced from 100 → pushes line start slightly down
+              top: 120,
               width: "2px",
               backgroundColor: theme.palette.text.primary,
               zIndex: 0,
@@ -233,7 +251,7 @@ export default function Education() {
               </Box>
             )}
 
-            <Grid size={{xs:12}}>
+            <Grid size={{ xs: 12 }}>
               <Card edu={edu} index={index} />
             </Grid>
           </Grid>

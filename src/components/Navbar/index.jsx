@@ -29,14 +29,18 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { motion } from "framer-motion";
 import { colors } from "../../styles/theme/index";
 import Logo from "../Logo";
-  
+
 const menuItems = [
-  { label: "Home", icon: <HomeOutlinedIcon /> },
-  { label: "About", icon: <InfoOutlinedIcon /> },
-  { label: "Education", icon: <SchoolOutlinedIcon /> },
-  { label: "Course", icon: <CastForEducationOutlinedIcon /> },
-  { label: "Experience", icon: <WorkOutlineOutlinedIcon /> },
-  { label: "Contact Us", icon: <ContactMailOutlinedIcon /> },
+  { label: "Home", icon: <HomeOutlinedIcon />, href: "#home" },
+  { label: "About", icon: <InfoOutlinedIcon />, href: "#about" },
+  { label: "Education", icon: <SchoolOutlinedIcon />, href: "#education" },
+  { label: "Course", icon: <CastForEducationOutlinedIcon />, href: "#course" },
+  {
+    label: "Experience",
+    icon: <WorkOutlineOutlinedIcon />,
+    href: "#experience",
+  },
+  { label: "Contact Us", icon: <ContactMailOutlinedIcon />, href: "#contact" },
 ];
 
 const Navbar = ({ mode, toggleColorMode }) => {
@@ -49,6 +53,13 @@ const Navbar = ({ mode, toggleColorMode }) => {
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
+  };
+
+  const handleNavClick = (href) => {
+    const section = document.querySelector(href);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   useEffect(() => {
@@ -86,7 +97,7 @@ const Navbar = ({ mode, toggleColorMode }) => {
             transition={{ delay: index * 0.05 }}
           >
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={() => handleNavClick(item.href)}>
                 <ListItemIcon
                   sx={{
                     color: mode === "dark" ? colors.White : colors.textPrimary,
@@ -149,18 +160,7 @@ const Navbar = ({ mode, toggleColorMode }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                fontFamily: `'Poppins', 'Inter', sans-serif`,
-                color: mode === "dark" ? colors.White : colors.textPrimary,
-              }}
-            >
-              Vasanthakumar
-            </Typography> */}
             <Logo />
-
           </motion.div>
 
           {!isMobile ? (
@@ -174,6 +174,7 @@ const Navbar = ({ mode, toggleColorMode }) => {
                 >
                   <Button
                     startIcon={item.icon}
+                    onClick={() => handleNavClick(item.href)}
                     sx={{
                       color:
                         mode === "dark" ? colors.White : colors.textPrimary,
