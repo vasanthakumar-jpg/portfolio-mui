@@ -37,7 +37,7 @@ const About = () => {
     <Box
       sx={{
         flexGrow: 1,
-        pb: 10,
+        pb: { xs: 2, md: 10 },
         px: 2,
         maxWidth: "1200px",
         mx: "auto",
@@ -50,7 +50,11 @@ const About = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <Typography sx={{...common.sectionTitle, color: "inherit"}} textAlign="center" gutterBottom>
+        <Typography
+          sx={{ ...common.sectionTitle, color: "inherit" }}
+          textAlign="center"
+          gutterBottom
+        >
           About Me
         </Typography>
         <Divider sx={common.sectionDivider} />
@@ -70,9 +74,9 @@ const About = () => {
                 width: isMobile ? 192 : 350,
                 height: isMobile ? 192 : 430,
                 mx: "auto",
-                // background:
-                  // "linear-gradient(to bottom right, #1e40af, #93c5fd)",
-                // borderRadius: "50%",
+                background:
+                  "linear-gradient(to bottom right, #1e40af, #93c5fd)",
+                borderRadius: "50%",
                 p: "4px",
               }}
             >
@@ -93,14 +97,21 @@ const About = () => {
 
         {/* Content */}
         <Grid size={{ xs: 12, md: 8 }}>
-          <Box textAlign={{ xs: "center", md: "left" }} sx={{p: 2}}>
+          <Box textAlign={{ xs: "center", md: "left" }} sx={{ p: 2 }}>
             <motion.div
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <Typography sx={{...typographySizes.bodyText, color: "inherit", fontFamily: fontFamily.fontFamily}} paragraph>
+              <Typography
+                sx={{
+                  ...typographySizes.bodyText,
+                  color: "inherit",
+                  fontFamily: fontFamily.fontFamily,
+                }}
+                paragraph
+              >
                 I'm a passionate and detail-oriented Front-End Developer with 1
                 year of hands-on experience crafting responsive, accessible, and
                 modern web applications. My core strength lies in building
@@ -110,7 +121,14 @@ const About = () => {
                 performance.
               </Typography>
 
-              <Typography sx={{...typographySizes.bodyText, color: "inherit", fontFamily: fontFamily.fontFamily}} paragraph>
+              <Typography
+                sx={{
+                  ...typographySizes.bodyText,
+                  color: "inherit",
+                  fontFamily: fontFamily.fontFamily,
+                }}
+                paragraph
+              >
                 I enjoy collaborating with cross-functional teams, solving
                 real-world UI/UX challenges, and bringing ideas to life through
                 code. I believe great user experiences come from a mix of
@@ -149,11 +167,14 @@ const About = () => {
                     key={skill}
                     label={skill}
                     variant="outlined"
-                    sx={{ mb: 1, color: theme.palette.text.primary, fontFamily: fontFamily.fontFamily }}
+                    sx={{
+                      mb: 1,
+                      color: theme.palette.text.primary,
+                      fontFamily: fontFamily.fontFamily,
+                    }}
                   />
                 ))}
               </Stack>
-
             </motion.div>
           </Box>
         </Grid>

@@ -39,13 +39,11 @@ const Home = () => {
         ...layout.container,
         color: mode === "dark" ? "#ffffff" : "#1E293B",
         transition: "background-color 0.3s ease, color 0.3s ease",
-        // minHeight: "100vh",
         pt: { xs: 10, sm: 12 },
       }}
     >
       <Grid
         container
-        // spacing={10}
         alignItems="center"
         justifyContent="center"
         direction={{ xs: "column-reverse", md: "row" }}
@@ -65,20 +63,32 @@ const Home = () => {
               }}
             >
               <Typography
-                sx={{ ...common.sectionTitle, color: "inherit", fontFamily: fontFamily.fontFamily }}
+                sx={{
+                  ...common.sectionTitle,
+                  color: "inherit",
+                  fontFamily: fontFamily.fontFamily,
+                }}
                 gutterBottom
               >
                 Hello, I'm{" "}
                 <Box
                   component="span"
-                  sx={{ ...common.heading, color: "inherit", fontFamily: fontFamily.fontFamily }}
+                  sx={{
+                    ...common.heading,
+                    color: "inherit",
+                    fontFamily: fontFamily.fontFamily,
+                  }}
                 >
                   Vasanthakumar
                 </Box>
               </Typography>
 
               <Typography
-                sx={{ ...common.sectionTitle, color: "inherit", fontFamily: fontFamily.fontFamily }}
+                sx={{
+                  ...common.sectionTitle,
+                  color: "inherit",
+                  fontFamily: fontFamily.fontFamily,
+                }}
                 gutterBottom
               >
                 <Typewriter
@@ -97,7 +107,11 @@ const Home = () => {
               </Typography>
 
               <Typography
-                sx={{ ...common.body, color: "inherit", fontFamily: fontFamily.fontFamily }}
+                sx={{
+                  ...common.body,
+                  color: "inherit",
+                  fontFamily: fontFamily.fontFamily,
+                }}
                 gutterBottom
               >
                 I create responsive and modern web interfaces using React and

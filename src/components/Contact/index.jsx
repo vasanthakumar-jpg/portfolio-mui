@@ -34,7 +34,6 @@ const Contact = () => {
         {
           name: data.name,
           email: data.email,
-          phone: data.phone,
           message: data.message,
           title: "Contact Form Message",
         },
@@ -96,21 +95,6 @@ const Contact = () => {
           })}
           error={!!errors.email}
           helperText={errors.email?.message}
-          sx={inputStyles}
-        />
-
-        <TextField
-          label="Phone Number"
-          fullWidth
-          {...register("phone", {
-            required: "Phone number is required",
-            pattern: {
-              value: /^[0-9]{10}$/,
-              message: "Enter a valid 10-digit phone number",
-            },
-          })}
-          error={!!errors.phone}
-          helperText={errors.phone?.message}
           sx={inputStyles}
         />
 
