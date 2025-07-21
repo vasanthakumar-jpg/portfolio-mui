@@ -70,6 +70,7 @@ export const layout = {
     borderRadius: 2,
   },
   logo: {
+    padding: "6px 0px",
     width: {xs: "200px", md: "240px"},
     height: {xs: "60px", md: "100px"},
     objectFit: "cover",

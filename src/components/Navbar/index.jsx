@@ -118,14 +118,14 @@ const Navbar = ({ mode, toggleColorMode }) => {
           </motion.div>
         ))}
       </List>
-      <Box sx={{ px: 2, py: 1, display: "flex", alignItems: "center" }}>
+      <Box sx={{ px: 1, py: 1, display: "flex", alignItems: "center" }}>
         <IconButton color="inherit">
           {mode === "dark" ? <Brightness4Icon /> : <Brightness7Icon />}
         </IconButton>
         <Typography
           variant="body2"
           sx={{
-            ml: 1,
+            ml: 2,
             color: mode === "dark" ? colors.White : colors.textPrimary,
             fontFamily: `'Poppins', 'Inter', sans-serif`,
           }}
