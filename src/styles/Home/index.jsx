@@ -69,4 +69,10 @@ export const layout = {
     // objectFit: "cover",
     borderRadius: 2,
   },
+  logo: {
+    width: {xs: "200px", md: "240px"},
+    height: {xs: "60px", md: "100px"},
+    objectFit: "cover",
+    borderRadius: 2,
+  },
 };
